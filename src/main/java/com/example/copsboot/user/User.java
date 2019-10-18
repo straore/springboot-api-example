@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Table("copsboot_user")
+@Table(name = "copsboot_user")
 public class User {
     @Id
     private UUID id;
@@ -17,6 +17,11 @@ public class User {
     private Set<UserRole> roles;
 
     protected User(){
-
+    }
+    public User(UUID id, String email, String password, Set<UserRole> roles) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
     }
 }
